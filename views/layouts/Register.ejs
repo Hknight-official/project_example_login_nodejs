@@ -2,7 +2,7 @@
     <div class="container register-form">
         <div class="form">
             <div class="note">
-                <p>This is a simpleRegister Form made using Boostrap.</p>
+                <p>Trang đăng ký á nha.</p>
             </div>
     
             <div class="form-content">
@@ -10,7 +10,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <input type="text" class="form-control" name="username" placeholder="Your Name *" value=""/>
-                        </div>
+                        </div><br />
                         <div class="form-group">
                             <input type="number" class="form-control" name="phone" placeholder="Phone Number *" value=""/>
                         </div>
@@ -18,7 +18,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <input type="password" class="form-control" name="password" placeholder="Your Password *" value=""/>
-                        </div>
+                        </div><br />
                         <div class="form-group">
                             <input type="password" class="form-control" name="re_password" placeholder="Confirm Password *" value=""/>
                         </div>
@@ -37,6 +37,7 @@
             data: $('#form_register').serialize(),
             dataType: 'json',
             success: (obj) => {
+                console.log(obj);
                 alert(obj.msg);
             }
         });

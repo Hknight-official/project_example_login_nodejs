@@ -1,0 +1,42 @@
+<form id="form_login">
+    <div class="container register-form">
+        <div class="form">
+            <div class="note">
+                <p>Trang đăng nhập á nha.</p>
+            </div>
+    
+            <div class="form-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="Your Name *" value=""/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Your Password *" value=""/>
+                        </div>
+                    </div>
+                </div><br />
+                <button type="button" id="submit" class="btnSubmit">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    $('#submit').click(() => {
+        $.ajax({
+            url: '/login',
+            type: 'POST',
+            data: $('#form_login').serialize(),
+            dataType: 'json',
+            success: (obj) => {
+                console.log(obj);
+                alert(obj.msg);
+                window.location.href = '/users';
+            }
+        });
+    });
+    
+</script>
+
